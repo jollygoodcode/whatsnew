@@ -24,7 +24,7 @@ Or install:
 $ `whatsnew`
 
 What's New:
-See CHANGELOG.md: https://github.com/jollygoodcode/whatsnew.
+See CHANGELOG.md: https://github.com/jollygoodcode/whatsnew/CHANGELOG.md.
 ```
 
 ### API usage
