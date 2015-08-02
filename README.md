@@ -12,7 +12,11 @@ Add this line to your application's Gemfile:
 gem "whatsnew"
 ```
 
-Or install:
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
 
     $ gem install whatsnew
 
@@ -21,10 +25,10 @@ Or install:
 ### Command line usage
 
 ```
-$ `whatsnew`
+$ whatsnew
 
 What's New:
-See CHANGELOG.md: https://github.com/jollygoodcode/whatsnew/CHANGELOG.md.
+See CHANGELOG.md: https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md.
 ```
 
 ### API usage
@@ -36,7 +40,7 @@ news.filename
 => "CHANGELOG.md"
 
 news.url
-=> "https://github.com/jollygoodcode/whatsnew/CHANGELOG.md"
+=> "https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md"
 
 news.content
 => "...content..."
@@ -45,6 +49,10 @@ news.content
 ## What it search for?
 
 * `CHANGELOG`, `CHANGE`, `CHANGES`, `HISTORY`, `NEWS` in the root of project (regardless of file extension).
+
+## Development
+
+See [DEVELOPMENT.md](DEVELOPMENT.md)
 
 ## Contributing
 

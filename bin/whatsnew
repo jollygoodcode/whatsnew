@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+Signal.trap("INT") { abort }
+
+require "bundler/setup"
+require "whatsnew"
+
+if news = Whatsnew::Project.new(Dir.pwd).news_file
+  puts news.content
+else
+  puts "Not found. Do you mind keep a changelog?"
+  puts "Or tell the project owner to keep a changelog :)"
+  puts "See http://keepachangelog.com"
+end
