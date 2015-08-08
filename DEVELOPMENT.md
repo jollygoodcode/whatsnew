@@ -7,3 +7,7 @@
 ## Running Tests
 
     $ bundle exec rake
+
+## Run with local gem
+
+    $ bin/dev
