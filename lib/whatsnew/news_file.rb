@@ -2,17 +2,23 @@ require "pathname"
 
 module Whatsnew
   class NewsFile
+    attr_reader :file_url
+
     def initialize(path, project_uri)
-      @filename = Pathname(path).basename
-      @file_url = "#{project_uri}/blob/master/#{@filename}"
+      @newsfile = Pathname(path)
+      @file_url = "#{project_uri}/blob/master/#{file_name}"
     end
 
     def content
-      "What's New:\n" "See #{filename}: #{file_url}."
+      "What's New:\n" "See #{file_name}: #{file_url}."
+    end
+
+    def file_name
+      newsfile.basename.to_s
     end
 
     private
 
-      attr_reader :filename, :file_url
+      attr_reader :newsfile
   end
 end

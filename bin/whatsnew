@@ -5,7 +5,7 @@ Signal.trap("INT") { abort }
 require "bundler/setup"
 require "whatsnew"
 
-if news = Whatsnew::Project.new(Dir.pwd).news_file
+if news = Whatsnew.about(Dir.pwd)
   puts news.content
 else
   puts "Not found. Do you mind keep a changelog?"
