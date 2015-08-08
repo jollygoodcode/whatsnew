@@ -31,7 +31,7 @@ What's New:
 See CHANGELOG.md: https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md.
 ```
 
-### API usage
+### Local API usage
 
 ```ruby
 news = Whatsnew.about "/Users/Juan/dev/whatsnew"
@@ -45,6 +45,26 @@ news.file_url
 news.content
 => "What's New:\nSee CHANGELOG.md: https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md."
 ```
+
+### Remote API usage with [Octokit](https://github.com/octokit/octokit.rb)
+
+First [get an OAuth access token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/), then:
+
+```ruby
+client = Octokit::Client.new(access_token: ENV["OAUTH_TOKEN"])
+
+news = Whatsnew.about client.contents("jollygoodcode/whatsnew")
+
+news.file_name
+=> "CHANGELOG.md"
+
+news.file_url
+=> "https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md"
+
+news.content
+=> "What's New:\nSee CHANGELOG.md: https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md."
+```
+
 
 ## What it search for?
 
