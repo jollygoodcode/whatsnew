@@ -3,5 +3,9 @@
 require "bundler/setup"
 require "whatsnew"
 
+require "octokit"
+
 require "pry"
 Pry.start
+
+
