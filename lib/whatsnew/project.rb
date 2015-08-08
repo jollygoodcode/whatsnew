@@ -28,7 +28,7 @@ module Whatsnew
       def matched_from_git_repository
         Dir.chdir(Pathname(@path).to_path) do
           `git config --get remote.origin.url`.match(
-            %r{git@(?<host>.*):(?<owner>jollygoodcode)/(?<repo>whatsnew).git}
+            %r{git.+(?<host>(github.com|bitbucket.com|bitbucket.org))[:/](?<owner>\S+)/(?<repo>\S+)\.git}
           )
         end
       end
