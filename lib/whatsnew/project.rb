@@ -10,7 +10,11 @@ module Whatsnew
     end
 
     def news_file
-      NewsFile.new(@name, project_uri)
+      if @name
+        NewsFile.new(@name, project_uri)
+      else
+        NoNewsFile.new
+      end
     end
 
     # git@github.com:jollygoodcode/whatsnew.git

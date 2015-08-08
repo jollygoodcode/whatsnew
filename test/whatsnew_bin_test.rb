@@ -17,4 +17,15 @@ class WhatsnewBinTest < Minitest::Test
     assert_empty stderr
     assert_equal 0, status
   end
+
+  def test_no_news_file
+    root = File.expand_path "..", File.dirname(__FILE__)
+    stdout, stderr, status = Dir.chdir("/tmp") do
+      Open3.capture3("#{root}/bin/whatsnew")
+    end
+
+    assert_equal "NOT FOUND", stdout.chomp!
+    assert_empty stderr
+    assert_equal 0, status
+  end
 end
