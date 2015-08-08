@@ -52,7 +52,7 @@ news.content
 
 ## Development
 
-See [DEVELOPMENT.md](DEVELOPMENT.md)
+See [DEVELOPMENT.md](DEVELOPMENT.md).
 
 ## Contributing
 
