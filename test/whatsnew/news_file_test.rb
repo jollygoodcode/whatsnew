@@ -13,9 +13,9 @@ class WhatsnewNewsFileTest < Minitest::Test
       @news_file.file_url
   end
 
-  def test_content
+  def test_read
     assert_equal \
       "What's New:\nSee CHANGELOG.md: https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md.",
-      @news_file.content
+      @news_file.read
   end
 end

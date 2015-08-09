@@ -6,7 +6,7 @@ require "bundler/setup"
 require "whatsnew"
 
 if news = Whatsnew.about(Dir.pwd)
-  puts news.content
+  puts news.read
 else
   puts "Not found. Do you mind keep a changelog?"
   puts "Or tell the project owner to keep a changelog :)"

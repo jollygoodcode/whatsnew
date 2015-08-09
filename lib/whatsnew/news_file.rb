@@ -9,7 +9,7 @@ module Whatsnew
       @file_url = file_url || "#{project_uri}/blob/master/#{file_name}"
     end
 
-    def content
+    def read
       "What's New:\n" "See #{file_name}: #{file_url}."
     end
   end

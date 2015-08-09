@@ -12,7 +12,7 @@ module Whatsnew
       NOT_FOUND
     end
 
-    def content
+    def read
       NOT_FOUND
     end
   end
