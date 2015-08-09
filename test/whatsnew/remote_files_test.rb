@@ -24,7 +24,7 @@ class WhatsnewRemoteFilesTest < Minitest::Test
     assert_kind_of NewsFile, news_file
     assert_equal "NEWS", news_file.file_name
     assert_equal \
-      "https://github.com/ruby/ruby/blob/master/NEWS", news_file.file_url
+      "https://github.com/ruby/ruby/blob/trunk/NEWS", news_file.file_url
   end
 
   def sawyer_resources
@@ -35,6 +35,6 @@ class WhatsnewRemoteFilesTest < Minitest::Test
 
   Resource = Struct.new(:name, :html_url)
   def resources
-    [Resource.new("NEWS", "https://github.com/ruby/ruby/blob/master/NEWS")]
+    [Resource.new("NEWS", "https://github.com/ruby/ruby/blob/trunk/NEWS")]
   end
 end
