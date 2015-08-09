@@ -8,7 +8,7 @@ module Whatsnew
 
     def to_news_file
       if news
-        NewsFile.new(news.name, file_url: news.html_url)
+        NewsFile.new(news.name, content: "See #{news.html_url}", file_url: news.html_url)
       else
         NoNewsFile.new
       end

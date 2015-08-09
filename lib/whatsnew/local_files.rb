@@ -11,7 +11,11 @@ module Whatsnew
 
     def to_news_file
       if news
-        NewsFile.new(Pathname(news).basename.to_s, project_uri: project_uri)
+        NewsFile.new(
+          file_name,
+          content: file.read,
+          file_url: "#{project_uri}/blob/master/#{file_name}"
+        )
       else
         NoNewsFile.new
       end
@@ -35,6 +39,14 @@ module Whatsnew
             %r{git.+(?<host>(github.com|bitbucket.com|bitbucket.org))[:/](?<owner>\S+)/(?<repo>\S+)\.git}
           )
         end
+      end
+
+      def file
+        @file ||= Pathname(news)
+      end
+
+      def file_name
+        @file_name ||= file.basename.to_s
       end
   end
 end

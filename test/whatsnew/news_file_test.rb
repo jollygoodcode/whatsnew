@@ -4,7 +4,11 @@ class WhatsnewNewsFileTest < Minitest::Test
   include Whatsnew
 
   def setup
-    @news_file = NewsFile.new("CHANGELOG.md", project_uri: "https://github.com/jollygoodcode/whatsnew")
+    @news_file =
+      NewsFile.new(
+        "CHANGELOG.md",
+        file_url: "https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md"
+      )
   end
 
   def test_file_url

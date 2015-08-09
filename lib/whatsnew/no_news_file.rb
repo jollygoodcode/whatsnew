@@ -15,5 +15,9 @@ module Whatsnew
     def read
       NOT_FOUND
     end
+
+    def content
+      "".freeze
+    end
   end
 end
