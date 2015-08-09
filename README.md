@@ -66,9 +66,11 @@ news.content
 ```
 
 
-## What it search for?
+## What it searches for?
 
 * `CHANGELOG`, `CHANGE`, `CHANGES`, `HISTORY`, `NEWS` in the root of project (regardless of file extension).
+
+* It doesn't search for changelog listed in README.
 
 ## Development
 
