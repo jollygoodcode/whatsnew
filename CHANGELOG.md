@@ -2,6 +2,8 @@
 
 ## Unrelease
 
+- Refactor the internal classes interfaces
+
 ## v0.3.0 - 2015-08-09
 
 - API Support finding news file from Octokit response
