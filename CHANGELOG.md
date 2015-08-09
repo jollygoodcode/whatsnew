@@ -2,6 +2,10 @@
 
 ## Unrelease
 
+### API CHANGES
+
+- `NewsFile#content` => `NewsFile#read` [#4](https://github.com/jollygoodcode/whatsnew/pull/4)
+- `NewsFile#content` => The content of the news file [#4](https://github.com/jollygoodcode/whatsnew/pull/4)
 - Refactor the internal classes interfaces [#3](https://github.com/jollygoodcode/whatsnew/pull/3)
 
 ## v0.3.0 - 2015-08-09
