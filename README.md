@@ -47,6 +47,9 @@ news.file_name
 news.file_url
 => "https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md"
 
+news.content
+=> "Content of CHANGELOG.md"
+
 news.read
 => "What's New:\nSee CHANGELOG.md: https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md."
 ```
