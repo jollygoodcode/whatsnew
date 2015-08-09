@@ -36,7 +36,7 @@ What's New:
 See CHANGELOG.md: https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md.
 ```
 
-### Local API usage
+### API usage for Local Files
 
 ```ruby
 news = Whatsnew.about "/Users/Juan/dev/whatsnew"
@@ -51,9 +51,11 @@ news.content
 => "What's New:\nSee CHANGELOG.md: https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md."
 ```
 
-### Remote API usage with [Octokit](https://github.com/octokit/octokit.rb)
+### API usage for Remote Files
 
-First [get an OAuth access token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/), then:
+#### Example use with [Octokit](https://github.com/octokit/octokit.rb)
+
+First [get an access token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/), then:
 
 ```ruby
 client = Octokit::Client.new(access_token: ENV["OAUTH_TOKEN"])
@@ -68,6 +70,23 @@ news.file_url
 
 news.content
 => "What's New:\nSee CHANGELOG.md: https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md."
+```
+
+Note that you can pass in array of any objects to `Whatsnew.about`, each object must respond to `:name` and `:html_url` messages:
+
+```ruby
+Resource = Struct.new(:name, :html_url)
+
+news = Whatsnew.about [Resource.new("NEWS", "https://github.com/ruby/ruby/blob/trunk/NEWS")]
+
+news.file_name
+=> "NEWS"
+
+news.file_url
+=> "https://github.com/ruby/ruby/blob/trunk/NEWS"
+
+news.content
+=> "What's New:\nSee NEWS: https://github.com/ruby/ruby/blob/trunk/NEWS."
 ```
 
 
