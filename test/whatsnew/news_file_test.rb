@@ -4,15 +4,7 @@ class WhatsnewNewsFileTest < Minitest::Test
   include Whatsnew
 
   def setup
-    @news_file =
-      NewsFile.new(
-        "./CHANGELOG.md",
-        "https://github.com/jollygoodcode/whatsnew"
-      )
-  end
-
-  def test_file_name
-    assert_equal "CHANGELOG.md", @news_file.file_name
+    @news_file = NewsFile.new("CHANGELOG.md", project_uri: "https://github.com/jollygoodcode/whatsnew")
   end
 
   def test_file_url
@@ -21,7 +13,7 @@ class WhatsnewNewsFileTest < Minitest::Test
       @news_file.file_url
   end
 
-  def test_content_when_project_uri_found
+  def test_content
     assert_equal \
       "What's New:\nSee CHANGELOG.md: https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md.",
       @news_file.content
