@@ -2,6 +2,8 @@
 
 ## Unrelease
 
+## v0.4.0 - 2015-08-09
+
 ### API CHANGES
 
 - `NewsFile#content` => `NewsFile#read` [#4](https://github.com/jollygoodcode/whatsnew/pull/4)
