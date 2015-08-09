@@ -2,6 +2,10 @@
 
 ## Unrelease
 
+## v0.3.0 - 2015-08-09
+
+- API Support finding news file from Octokit response
+
 ## v0.2.0 - 2015-08-08
 
 - NewsFile API changes
