@@ -21,8 +21,6 @@ module Whatsnew
       end
     end
 
-    # git@github.com:jollygoodcode/whatsnew.git
-    # => https://github.com:jollygoodcode/whatsnew
     def project_uri
       if matched = matched_from_git_repository
         "https://#{matched[:host]}/#{matched[:owner]}/#{matched[:repo]}"
