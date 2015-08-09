@@ -3,7 +3,7 @@
 [![Gem Version](https://badge.fury.io/rb/whatsnew.svg)](http://badge.fury.io/rb/whatsnew)
 [![Build Status](https://travis-ci.org/jollygoodcode/whatsnew.svg?branch=master)](https://travis-ci.org/jollygoodcode/whatsnew)
 
-What's New of a project?
+What's New about a project?
 
 --
 
@@ -85,7 +85,7 @@ See [DEVELOPMENT.md](DEVELOPMENT.md).
 
 See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-## Also Checkout
+## Inspired by
 
 [benbalter/licensee](https://github.com/benbalter/licensee) - A RubyGem to detect under what license a project is distributed.
 
