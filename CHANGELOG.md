@@ -2,11 +2,11 @@
 
 ## Unrelease
 
-- Refactor the internal classes interfaces
+- Refactor the internal classes interfaces [#3](https://github.com/jollygoodcode/whatsnew/pull/3)
 
 ## v0.3.0 - 2015-08-09
 
-- API Support finding news file from Octokit response
+- API Support finding news file from Octokit response [#1](https://github.com/jollygoodcode/whatsnew/pull/1)
 
 ## v0.2.0 - 2015-08-08
 
