@@ -2,7 +2,6 @@
 
 Signal.trap("INT") { abort }
 
-require "bundler/setup"
 require "whatsnew"
 
 if news = Whatsnew.about(Dir.pwd)
