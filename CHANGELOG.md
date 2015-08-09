@@ -2,6 +2,16 @@
 
 ## Unrelease
 
+## v0.4.1 - 2015-08-09
+
+### Features
+
+- Support more git config url matching [#6](https://github.com/jollygoodcode/whatsnew/pull/6)
+
+### Bug Fixes
+
+- Fix `whatsnew` executable failed to execute [#5](https://github.com/jollygoodcode/whatsnew/pull/5)
+
 ## v0.4.0 - 2015-08-09
 
 ### API CHANGES
