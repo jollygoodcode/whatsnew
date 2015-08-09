@@ -85,6 +85,10 @@ See [DEVELOPMENT.md](DEVELOPMENT.md).
 
 See [CONTRIBUTING.md](CONTRIBUTING.md).
 
+## Also Checkout
+
+[benbalter/licensee](https://github.com/benbalter/licensee) - A RubyGem to detect under what license a project is distributed.
+
 ## Credits
 
 A huge THANK YOU to all our [contributors](https://github.com/jollygoodcode/whatsnew/graphs/contributors)! :heart:
