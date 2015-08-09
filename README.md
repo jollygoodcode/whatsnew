@@ -1,6 +1,11 @@
 # What's New?
 
+[![Gem Version](https://badge.fury.io/rb/whatsnew.svg)](http://badge.fury.io/rb/whatsnew)
+[![Build Status](https://travis-ci.org/jollygoodcode/whatsnew.svg?branch=master)](https://travis-ci.org/jollygoodcode/whatsnew)
+
 What's New of a project?
+
+--
 
 Where is the document which documents changes between two releases?
 
