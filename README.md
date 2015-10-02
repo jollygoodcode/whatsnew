@@ -3,11 +3,11 @@
 [![Gem Version](https://badge.fury.io/rb/whatsnew.svg)](http://badge.fury.io/rb/whatsnew)
 [![Build Status](https://travis-ci.org/jollygoodcode/whatsnew.svg?branch=master)](https://travis-ci.org/jollygoodcode/whatsnew)
 
-What's New about a project?
+What's New in a project?
+
+This gem is used in [deppbot][https://www.deppbot.com] to build awesome, automated Pull Request descriptions for `bundle update` like [this one in Ruby Bench](https://github.com/ruby-bench/ruby-bench-web/pull/122).
 
 --
-
-Where is the document which documents changes between two releases?
 
 ## Installation
 
@@ -19,15 +19,19 @@ gem "whatsnew"
 
 And then execute:
 
-    $ bundle
+```
+$ bundle
+```
 
-Or install it yourself as:
+Or install it yourself:
 
-    $ gem install whatsnew
+```
+$ gem install whatsnew
+```
 
 ## Usage
 
-### Command line usage
+### Command Line Usage
 
 ```
 $ whatsnew
@@ -36,7 +40,7 @@ What's New:
 See CHANGELOG.md: https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md.
 ```
 
-### API usage for Local Files
+### API for Local Files
 
 ```ruby
 news = Whatsnew.about "/Users/Juan/dev/whatsnew"
@@ -54,7 +58,7 @@ news.read
 => "What's New:\nSee CHANGELOG.md: https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md."
 ```
 
-### API usage for Remote Files
+### API for Remote Files
 
 #### Example use with [Octokit](https://github.com/octokit/octokit.rb)
 
@@ -75,7 +79,7 @@ news.read
 => "What's New:\nSee CHANGELOG.md: https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md."
 ```
 
-Note that you can pass in array of any objects to `Whatsnew.about`, each object must respond to `:name` and `:html_url` messages:
+Note that you can pass in any array of objects to `Whatsnew.about`, but each object must respond to `:name` and `:html_url` methods:
 
 ```ruby
 Resource = Struct.new(:name, :html_url)
@@ -92,10 +96,9 @@ news.read
 => "What's New:\nSee NEWS: https://github.com/ruby/ruby/blob/trunk/NEWS."
 ```
 
+## What Does It Search For?
 
-## What it searches for?
-
-* `CHANGELOG`, `CHANGE`, `CHANGES`, `HISTORY`, `NEWS` in the root of project (regardless of file extension).
+* `CHANGELOG`, `CHANGE`, `CHANGES`, `HISTORY`, `NEWS` in the root of the project (regardless of file extension).
 
 * It doesn't search for changelog listed in README.
 
