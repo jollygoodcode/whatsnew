@@ -5,7 +5,7 @@
 
 What's New in a project?
 
-This gem is used in [deppbot][https://www.deppbot.com] to build awesome, automated Pull Request descriptions for `bundle update` like [this one in Ruby Bench](https://github.com/ruby-bench/ruby-bench-web/pull/122).
+This gem is used in [deppbot](https://www.deppbot.com) to build awesome, automated Pull Request descriptions for `bundle update` like [this one in Ruby Bench](https://github.com/ruby-bench/ruby-bench-web/pull/122).
 
 --
 
