@@ -102,24 +102,25 @@ news.read
 
 * It doesn't search for changelog listed in README.
 
-## Development
-
-See [DEVELOPMENT.md](DEVELOPMENT.md).
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md).
-
 ## Inspired by
 
 [benbalter/licensee](https://github.com/benbalter/licensee) - A RubyGem to detect under what license a project is distributed.
+
+## Contributing
+
+Please see the [CONTRIBUTING.md](/CONTRIBUTING.md) file.
 
 ## Credits
 
 A huge THANK YOU to all our [contributors](https://github.com/jollygoodcode/whatsnew/graphs/contributors)! :heart:
 
-This project is maintained by [Jolly Good Code](http://www.jollygoodcode.com).
-
 ## License
 
-The gem is available as open source under the terms of the [MIT License](LICENSE.md).
+Please see the [LICENSE.md](/LICENSE.md) file.
+
+## Maintained by Jolly Good Code
+
+[![Jolly Good Code](https://cloud.githubusercontent.com/assets/1000669/9362336/72f9c406-46d2-11e5-94de-5060e83fcf83.jpg)](http://www.jollygoodcode.com)
+
+We specialise in Agile practices and Ruby, and we love contributing to open source.
+[Speak to us](http://www.jollygoodcode.com/#get-in-touch) about your next big idea, or [check out our projects](http://www.jollygoodcode.com/open-source).
