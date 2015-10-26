@@ -2,10 +2,11 @@ source "https://rubygems.org"
 
 gemspec
 
-gem "bundler"
-gem "rake"
-gem "pry"
-gem "minitest", "~> 5.8"
-gem "shoulda", "~> 3.5"
-gem "octokit", "~> 4.0.1"
-gem "dish"
+group :development do
+  gem "bundler"
+  gem "rake"
+  gem "pry"
+  gem "rspec", "~> 3.3.0"
+  gem "octokit", "~> 4.1.1"
+  gem "dish"
+end
