@@ -1,14 +1,14 @@
 module Whatsnew
   class RemoteFiles
     def initialize(resources)
-      @news = resources.find do |resource|
-        resource.name =~ %r{(CHANGE|CHANGES|CHANGELOG|NEWS|HISTORY)}i.freeze
-      end
+      @resources = resources
     end
 
     def to_news_file
-      if news
-        NewsFile.new(news.name, content: "See #{news_html_url}", file_url: news_html_url)
+      if contents = find_news
+        NewsFile.new(contents)
+      elsif release = find_release
+        ReleaseFile.new(release)
       else
         NoNewsFile.new
       end
@@ -16,10 +16,16 @@ module Whatsnew
 
     private
 
-      attr_reader :news
+      attr_reader :resources
 
-      def news_html_url
-        @news_html_url ||= news.html_url
+      def find_news
+        resources.find do |resource|
+          resource.name =~ %r{(CHANGE|CHANGES|CHANGELOG|NEWS|HISTORY)}i.freeze
+        end
+      end
+
+      def find_release
+        resources.find { |release| release.respond_to?(:body) && !release.body.empty? }
       end
   end
 end
