@@ -7,7 +7,7 @@ RSpec.describe "Executable" do
     stdout, stderr, status = Open3.capture3("#{root}/bin/whatsnew")
 
     expect(stdout).to include "What's New"
-    expect(stdout).to include "See CHANGELOG.md: https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md."
+    expect(stdout).to include "See CHANGELOG.md"
     expect(stderr).to be_empty
     expect(status).to eq 0
   end
