@@ -9,5 +9,5 @@ if news = Whatsnew.about(Dir.pwd)
 else
   puts "Not found. Do you mind keep a changelog?"
   puts "Or tell the project owner to keep a changelog :)"
-  puts "See http://keepachangelog.com"
+  puts "See http://keepachangelog.com."
 end
