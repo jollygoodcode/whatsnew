@@ -2,16 +2,32 @@ require "pathname"
 
 module Whatsnew
   class NewsFile
-    attr_reader :file_name, :content, :file_url
+    def initialize(news)
+      @news = news
+    end
 
-    def initialize(file_name, content: nil, file_url: nil)
-      @file_name = file_name
-      @content = content
-      @file_url = file_url
+    def file_name
+      news.name
+    end
+
+    def file_url
+      news_html_url
+    end
+
+    def content
+      "See #{file_url}."
     end
 
     def read
       "What's New:\n" "See #{file_name}: #{file_url}."
     end
+
+    private
+
+      attr_reader :news
+
+      def news_html_url
+        news.html_url
+      end
   end
 end
