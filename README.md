@@ -62,11 +62,15 @@ news.read
 
 #### Example use with [Octokit](https://github.com/octokit/octokit.rb)
 
-First [get an access token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/), then:
+First [get an access token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/), then instantiate a client:
 
 ```ruby
 client = Octokit::Client.new(access_token: ENV["OAUTH_TOKEN"])
+```
 
+##### [Contents API](https://developer.github.com/v3/repos/contents/#get-contents)
+
+```ruby
 news = Whatsnew.about client.contents("jollygoodcode/whatsnew")
 
 news.file_name
@@ -75,9 +79,32 @@ news.file_name
 news.file_url
 => "https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md"
 
+news.content
+=> "See https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md"
+
 news.read
 => "What's New:\nSee CHANGELOG.md: https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md."
 ```
+
+##### [Releases API](https://developer.github.com/v3/repos/releases/)
+
+```ruby
+news = Whatsnew.about client.releases("jollygoodcode/whatsnew")
+
+news.file_name
+=> "Releases"
+
+news.file_url
+=> "https://github.com/jollygoodcode/whatsnew/releases"
+
+news.content
+=> "See https://github.com/jollygoodcode/whatsnew/releases"
+
+news.read
+=> "What's New:\nSee Releases: https://github.com/jollygoodcode/whatsnew/releases."
+```
+
+##### Any Object respond to certain messages
 
 Note that you can pass in any array of objects to `Whatsnew.about`, but each object must respond to `:name` and `:html_url` methods:
 
@@ -98,9 +125,12 @@ news.read
 
 ## What Does It Search For?
 
-* `CHANGELOG`, `CHANGE`, `CHANGES`, `HISTORY`, `NEWS` in the root of the project (regardless of file extension).
+* changelog-like file
 
-* It doesn't search for changelog listed in README.
+  `CHANGELOG`, `CHANGE`, `CHANGES`, `HISTORY`, `NEWS` in the root of the project (regardless of file extension).
+
+* It doesn't search for changelog listed in README (regardless of file extension)
+* If a changelog-like file cannot be found, will try to see if [GitHub Releases](https://github.com/blog/1547-release-your-software) has contents to show
 
 ## Inspired by
 
