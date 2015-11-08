@@ -31,6 +31,22 @@ $ gem install whatsnew
 
 ## Usage
 
+### First Setup OAuth Token
+
+Either Pass in as command line argument
+
+```
+whatsnew --access-token=<your-40-char-token>
+```
+
+Or stored in ENV variable: `OAUTH_ACCESS_TOKEN`.
+
+You can either get a [Personal Access Token] or [get an OAuth token](https://developer.github.com/v3/oauth).
+
+If you need to access private repository, make sure to specify the `repo` scope while creating your token.
+
+If no OAuth token is provided, unauthenticated limits to 60 requests per hour. More details please read [Rate Limiting](https://developer.github.com/v3/#rate-limiting).
+
 ### Command Line Usage
 
 ```
@@ -40,7 +56,36 @@ What's New:
 See CHANGELOG.md: https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md.
 ```
 
-### API for Local Files
+If changelog cannot be found, search for [GitHub Releases](https://github.com/blog/1547-release-your-software) (if it has any releases):
+
+```
+$ whatsnew
+
+What's New:
+See Releases: https://github.com/jollygoodcode/whatsnew/releases.
+```
+
+Both changelog and release cannot be found:
+
+```
+$ whatsnew
+
+This project should Keep a CHANGELOG: http://keepachangelog.com.
+```
+
+## What Does It Search For?
+
+* changelog-like file
+
+  `CHANGELOG`, `CHANGE`, `CHANGES`, `HISTORY`, `NEWS` in the root of the project (regardless of file extension).
+
+* If a changelog-like file cannot be found, will try to see if [GitHub Releases](https://github.com/blog/1547-release-your-software) has contents to show
+
+* It doesn't search for changelog listed in README (regardless of file extension)
+
+### API usage
+
+#### Local
 
 ```ruby
 news = Whatsnew.about "/Users/Juan/dev/whatsnew"
@@ -50,28 +95,20 @@ news.file_name
 
 news.file_url
 => "https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md"
+# or returns changelog's path if this project is not a git repository
+=> "/Users/Juan/dev/whatsnew/CHANGELOG.md"
 
 news.content
-=> "Content of CHANGELOG.md"
+=> "Prints Content of CHANGELOG.md"
 
 news.read
 => "What's New:\nSee CHANGELOG.md: https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md."
 ```
 
-### API for Remote Files
-
-#### Example use with [Octokit](https://github.com/octokit/octokit.rb)
-
-First [get an access token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/), then instantiate a client:
+#### Remote
 
 ```ruby
-client = Octokit::Client.new(access_token: ENV["OAUTH_TOKEN"])
-```
-
-##### [Contents API](https://developer.github.com/v3/repos/contents/#get-contents)
-
-```ruby
-news = Whatsnew.about client.contents("jollygoodcode/whatsnew")
+news = Whatsnew.about "jollygoodcode/whatsnew", oauth_token: "e72e16c7e42f292c6912e7710c838347ae178b4a"
 
 news.file_name
 => "CHANGELOG.md"
@@ -80,57 +117,13 @@ news.file_url
 => "https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md"
 
 news.content
-=> "See https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md"
+=> "Please see: https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md."
 
 news.read
 => "What's New:\nSee CHANGELOG.md: https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md."
 ```
 
-##### [Releases API](https://developer.github.com/v3/repos/releases/)
-
-```ruby
-news = Whatsnew.about client.releases("jollygoodcode/whatsnew")
-
-news.file_name
-=> "Releases"
-
-news.file_url
-=> "https://github.com/jollygoodcode/whatsnew/releases"
-
-news.content
-=> "See https://github.com/jollygoodcode/whatsnew/releases"
-
-news.read
-=> "What's New:\nSee Releases: https://github.com/jollygoodcode/whatsnew/releases."
-```
-
-##### Any Object respond to certain messages
-
-Note that you can pass in any array of objects to `Whatsnew.about`, but each object must respond to `:name` and `:html_url` methods:
-
-```ruby
-Resource = Struct.new(:name, :html_url)
-
-news = Whatsnew.about [Resource.new("NEWS", "https://github.com/ruby/ruby/blob/trunk/NEWS")]
-
-news.file_name
-=> "NEWS"
-
-news.file_url
-=> "https://github.com/ruby/ruby/blob/trunk/NEWS"
-
-news.read
-=> "What's New:\nSee NEWS: https://github.com/ruby/ruby/blob/trunk/NEWS."
-```
-
-## What Does It Search For?
-
-* changelog-like file
-
-  `CHANGELOG`, `CHANGE`, `CHANGES`, `HISTORY`, `NEWS` in the root of the project (regardless of file extension).
-
-* It doesn't search for changelog listed in README (regardless of file extension)
-* If a changelog-like file cannot be found, will try to see if [GitHub Releases](https://github.com/blog/1547-release-your-software) has contents to show
+It will first search if a remote repository has a changelog file, then search for GitHub Releases.
 
 ## Inspired by
 
@@ -152,5 +145,4 @@ Please see the [LICENSE.md](/LICENSE.md) file.
 
 [![Jolly Good Code](https://cloud.githubusercontent.com/assets/1000669/9362336/72f9c406-46d2-11e5-94de-5060e83fcf83.jpg)](http://www.jollygoodcode.com)
 
-We specialise in Agile practices and Ruby, and we love contributing to open source.
-[Speak to us](http://www.jollygoodcode.com/#get-in-touch) about your next big idea, or [check out our projects](http://www.jollygoodcode.com/open-source).
+We specialise in Agile practices and Ruby, and we love contributing to open source. [Speak to us](http://www.jollygoodcode.com/#get-in-touch) about your next big idea, or [check out our projects](http://www.jollygoodcode.com/open-source).
