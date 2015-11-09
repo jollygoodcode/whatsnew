@@ -13,7 +13,7 @@ module Whatsnew
 
     def file_url
       return NOT_FOUND unless news
-      return file.to_path unless File.exist?("#{path}/.git")
+      return file.to_path unless File.exist?(File.join(path, DOT_GIT))
 
       "https://#{matched[:host]}/#{matched[:owner]}/#{matched[:repo]}/blob/master/#{file_name}"
     end

@@ -20,4 +20,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+
+  spec.add_dependency "thor", [">= 0.19.1", "< 2"]
+  spec.add_dependency "octokit", [">= 4.1.1", "< 5"]
 end

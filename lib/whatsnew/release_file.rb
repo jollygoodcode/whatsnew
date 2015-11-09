@@ -1,5 +1,3 @@
-require "pathname"
-
 module Whatsnew
   class ReleaseFile
     def initialize(release)

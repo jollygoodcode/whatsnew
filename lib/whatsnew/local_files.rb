@@ -1,9 +1,7 @@
-require "pathname"
-
 module Whatsnew
   class LocalFiles
     def initialize(path)
-      @path = path
+      @path = path || DOT
     end
 
     def to_news_file
@@ -19,8 +17,8 @@ module Whatsnew
       attr_reader :path
 
       def find_news_at_local
-        Dir.glob(File.join(path, "*".freeze)).find do |local_file|
-          local_file =~ %r{(CHANGE|CHANGES|CHANGELOG|NEWS|HISTORY)}i.freeze
+        Dir.glob(File.join(path, STAR)).find do |local_file|
+          local_file =~ FILES_TO_SEARCH_REGEXP
         end
       end
   end

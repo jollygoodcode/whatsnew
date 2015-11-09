@@ -2,27 +2,28 @@ module Whatsnew
   class Project
     attr_reader :news_file
 
-    def initialize(path_or_resources)
-      @path_or_resources = Array(path_or_resources)
+    def initialize(path_or_repo, access_token = nil)
+      @path_or_repo = path_or_repo
+      @access_token = access_token
     end
 
     def news_file
-      if resources?
-        RemoteFiles.new(path_or_resources).to_news_file
+      return LocalFiles.new(path_or_repo).to_news_file unless path_or_repo
+
+      if query_for_a_repo?
+        RemoteFiles.new(path_or_repo, access_token).to_news_file
       else
-        LocalFiles.new(path_or_resources).to_news_file
+        LocalFiles.new(path_or_repo).to_news_file
       end
     end
 
     private
 
-      attr_reader :path_or_resources
+      attr_reader :path_or_repo, :access_token
 
-      def resources?
-        path_or_resources &&
-        path_or_resources.respond_to?(:find) &&
-        path_or_resources.first.respond_to?(:name) &&
-        path_or_resources.first.respond_to?(:html_url)
+      def query_for_a_repo?
+        path_or_repo.count("/".freeze) == 1 &&
+        path_or_repo =~ %r(^.+/.+$).freeze
       end
   end
 end

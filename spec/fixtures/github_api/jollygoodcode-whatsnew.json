@@ -1,0 +1,194 @@
+[
+  {
+    "name": ".gitignore",
+    "path": ".gitignore",
+    "sha": "0cb6eeb0676e0d425ed7ddc8b444bb8bbb9a9797",
+    "size": 87,
+    "url": "https://api.github.com/repos/jollygoodcode/whatsnew/contents/.gitignore?ref=master",
+    "html_url": "https://github.com/jollygoodcode/whatsnew/blob/master/.gitignore",
+    "git_url": "https://api.github.com/repos/jollygoodcode/whatsnew/git/blobs/0cb6eeb0676e0d425ed7ddc8b444bb8bbb9a9797",
+    "download_url": "https://raw.githubusercontent.com/jollygoodcode/whatsnew/master/.gitignore",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/jollygoodcode/whatsnew/contents/.gitignore?ref=master",
+      "git": "https://api.github.com/repos/jollygoodcode/whatsnew/git/blobs/0cb6eeb0676e0d425ed7ddc8b444bb8bbb9a9797",
+      "html": "https://github.com/jollygoodcode/whatsnew/blob/master/.gitignore"
+    }
+  },
+  {
+    "name": ".travis.yml",
+    "path": ".travis.yml",
+    "sha": "57dbfd924ee4aacd22fc93ff2da81b062b4f76ea",
+    "size": 893,
+    "url": "https://api.github.com/repos/jollygoodcode/whatsnew/contents/.travis.yml?ref=master",
+    "html_url": "https://github.com/jollygoodcode/whatsnew/blob/master/.travis.yml",
+    "git_url": "https://api.github.com/repos/jollygoodcode/whatsnew/git/blobs/57dbfd924ee4aacd22fc93ff2da81b062b4f76ea",
+    "download_url": "https://raw.githubusercontent.com/jollygoodcode/whatsnew/master/.travis.yml",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/jollygoodcode/whatsnew/contents/.travis.yml?ref=master",
+      "git": "https://api.github.com/repos/jollygoodcode/whatsnew/git/blobs/57dbfd924ee4aacd22fc93ff2da81b062b4f76ea",
+      "html": "https://github.com/jollygoodcode/whatsnew/blob/master/.travis.yml"
+    }
+  },
+  {
+    "name": "CHANGELOG.md",
+    "path": "CHANGELOG.md",
+    "sha": "502167c32fb5904d2ca196142ad899cc0edae3a8",
+    "size": 1035,
+    "url": "https://api.github.com/repos/jollygoodcode/whatsnew/contents/CHANGELOG.md?ref=master",
+    "html_url": "https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md",
+    "git_url": "https://api.github.com/repos/jollygoodcode/whatsnew/git/blobs/502167c32fb5904d2ca196142ad899cc0edae3a8",
+    "download_url": "https://raw.githubusercontent.com/jollygoodcode/whatsnew/master/CHANGELOG.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/jollygoodcode/whatsnew/contents/CHANGELOG.md?ref=master",
+      "git": "https://api.github.com/repos/jollygoodcode/whatsnew/git/blobs/502167c32fb5904d2ca196142ad899cc0edae3a8",
+      "html": "https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md"
+    }
+  },
+  {
+    "name": "CONTRIBUTING.md",
+    "path": "CONTRIBUTING.md",
+    "sha": "68e4ce1739650979da94c24cfd02a6bb0b3b8cf3",
+    "size": 434,
+    "url": "https://api.github.com/repos/jollygoodcode/whatsnew/contents/CONTRIBUTING.md?ref=master",
+    "html_url": "https://github.com/jollygoodcode/whatsnew/blob/master/CONTRIBUTING.md",
+    "git_url": "https://api.github.com/repos/jollygoodcode/whatsnew/git/blobs/68e4ce1739650979da94c24cfd02a6bb0b3b8cf3",
+    "download_url": "https://raw.githubusercontent.com/jollygoodcode/whatsnew/master/CONTRIBUTING.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/jollygoodcode/whatsnew/contents/CONTRIBUTING.md?ref=master",
+      "git": "https://api.github.com/repos/jollygoodcode/whatsnew/git/blobs/68e4ce1739650979da94c24cfd02a6bb0b3b8cf3",
+      "html": "https://github.com/jollygoodcode/whatsnew/blob/master/CONTRIBUTING.md"
+    }
+  },
+  {
+    "name": "Gemfile",
+    "path": "Gemfile",
+    "sha": "3abf112dce46af8bc36528fd7947006b442c27ff",
+    "size": 161,
+    "url": "https://api.github.com/repos/jollygoodcode/whatsnew/contents/Gemfile?ref=master",
+    "html_url": "https://github.com/jollygoodcode/whatsnew/blob/master/Gemfile",
+    "git_url": "https://api.github.com/repos/jollygoodcode/whatsnew/git/blobs/3abf112dce46af8bc36528fd7947006b442c27ff",
+    "download_url": "https://raw.githubusercontent.com/jollygoodcode/whatsnew/master/Gemfile",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/jollygoodcode/whatsnew/contents/Gemfile?ref=master",
+      "git": "https://api.github.com/repos/jollygoodcode/whatsnew/git/blobs/3abf112dce46af8bc36528fd7947006b442c27ff",
+      "html": "https://github.com/jollygoodcode/whatsnew/blob/master/Gemfile"
+    }
+  },
+  {
+    "name": "LICENSE.md",
+    "path": "LICENSE.md",
+    "sha": "80af409d024afcbda1ec3d80549068463cecc295",
+    "size": 1082,
+    "url": "https://api.github.com/repos/jollygoodcode/whatsnew/contents/LICENSE.md?ref=master",
+    "html_url": "https://github.com/jollygoodcode/whatsnew/blob/master/LICENSE.md",
+    "git_url": "https://api.github.com/repos/jollygoodcode/whatsnew/git/blobs/80af409d024afcbda1ec3d80549068463cecc295",
+    "download_url": "https://raw.githubusercontent.com/jollygoodcode/whatsnew/master/LICENSE.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/jollygoodcode/whatsnew/contents/LICENSE.md?ref=master",
+      "git": "https://api.github.com/repos/jollygoodcode/whatsnew/git/blobs/80af409d024afcbda1ec3d80549068463cecc295",
+      "html": "https://github.com/jollygoodcode/whatsnew/blob/master/LICENSE.md"
+    }
+  },
+  {
+    "name": "README.md",
+    "path": "README.md",
+    "sha": "1a25ff4207d9c6ebe8f7fd32ec5307bb0dd93052",
+    "size": 3262,
+    "url": "https://api.github.com/repos/jollygoodcode/whatsnew/contents/README.md?ref=master",
+    "html_url": "https://github.com/jollygoodcode/whatsnew/blob/master/README.md",
+    "git_url": "https://api.github.com/repos/jollygoodcode/whatsnew/git/blobs/1a25ff4207d9c6ebe8f7fd32ec5307bb0dd93052",
+    "download_url": "https://raw.githubusercontent.com/jollygoodcode/whatsnew/master/README.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/jollygoodcode/whatsnew/contents/README.md?ref=master",
+      "git": "https://api.github.com/repos/jollygoodcode/whatsnew/git/blobs/1a25ff4207d9c6ebe8f7fd32ec5307bb0dd93052",
+      "html": "https://github.com/jollygoodcode/whatsnew/blob/master/README.md"
+    }
+  },
+  {
+    "name": "Rakefile",
+    "path": "Rakefile",
+    "sha": "3d52175ea755585cfb8973906c3bee810c2673a5",
+    "size": 195,
+    "url": "https://api.github.com/repos/jollygoodcode/whatsnew/contents/Rakefile?ref=master",
+    "html_url": "https://github.com/jollygoodcode/whatsnew/blob/master/Rakefile",
+    "git_url": "https://api.github.com/repos/jollygoodcode/whatsnew/git/blobs/3d52175ea755585cfb8973906c3bee810c2673a5",
+    "download_url": "https://raw.githubusercontent.com/jollygoodcode/whatsnew/master/Rakefile",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/jollygoodcode/whatsnew/contents/Rakefile?ref=master",
+      "git": "https://api.github.com/repos/jollygoodcode/whatsnew/git/blobs/3d52175ea755585cfb8973906c3bee810c2673a5",
+      "html": "https://github.com/jollygoodcode/whatsnew/blob/master/Rakefile"
+    }
+  },
+  {
+    "name": "bin",
+    "path": "bin",
+    "sha": "633d74faaaf161b2dc5b064e9dd3dcb2fc8bef8b",
+    "size": 0,
+    "url": "https://api.github.com/repos/jollygoodcode/whatsnew/contents/bin?ref=master",
+    "html_url": "https://github.com/jollygoodcode/whatsnew/tree/master/bin",
+    "git_url": "https://api.github.com/repos/jollygoodcode/whatsnew/git/trees/633d74faaaf161b2dc5b064e9dd3dcb2fc8bef8b",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/jollygoodcode/whatsnew/contents/bin?ref=master",
+      "git": "https://api.github.com/repos/jollygoodcode/whatsnew/git/trees/633d74faaaf161b2dc5b064e9dd3dcb2fc8bef8b",
+      "html": "https://github.com/jollygoodcode/whatsnew/tree/master/bin"
+    }
+  },
+  {
+    "name": "lib",
+    "path": "lib",
+    "sha": "b7360d75fc18d420f78e49f175c6f1fc1d49adfe",
+    "size": 0,
+    "url": "https://api.github.com/repos/jollygoodcode/whatsnew/contents/lib?ref=master",
+    "html_url": "https://github.com/jollygoodcode/whatsnew/tree/master/lib",
+    "git_url": "https://api.github.com/repos/jollygoodcode/whatsnew/git/trees/b7360d75fc18d420f78e49f175c6f1fc1d49adfe",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/jollygoodcode/whatsnew/contents/lib?ref=master",
+      "git": "https://api.github.com/repos/jollygoodcode/whatsnew/git/trees/b7360d75fc18d420f78e49f175c6f1fc1d49adfe",
+      "html": "https://github.com/jollygoodcode/whatsnew/tree/master/lib"
+    }
+  },
+  {
+    "name": "test",
+    "path": "test",
+    "sha": "9e8a34e89473c73c7bab8d19ed490994bf1810cf",
+    "size": 0,
+    "url": "https://api.github.com/repos/jollygoodcode/whatsnew/contents/test?ref=master",
+    "html_url": "https://github.com/jollygoodcode/whatsnew/tree/master/test",
+    "git_url": "https://api.github.com/repos/jollygoodcode/whatsnew/git/trees/9e8a34e89473c73c7bab8d19ed490994bf1810cf",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/jollygoodcode/whatsnew/contents/test?ref=master",
+      "git": "https://api.github.com/repos/jollygoodcode/whatsnew/git/trees/9e8a34e89473c73c7bab8d19ed490994bf1810cf",
+      "html": "https://github.com/jollygoodcode/whatsnew/tree/master/test"
+    }
+  },
+  {
+    "name": "whatsnew.gemspec",
+    "path": "whatsnew.gemspec",
+    "sha": "86ca87e2ac7eaf236c923bd0ff57fcb8582563b0",
+    "size": 737,
+    "url": "https://api.github.com/repos/jollygoodcode/whatsnew/contents/whatsnew.gemspec?ref=master",
+    "html_url": "https://github.com/jollygoodcode/whatsnew/blob/master/whatsnew.gemspec",
+    "git_url": "https://api.github.com/repos/jollygoodcode/whatsnew/git/blobs/86ca87e2ac7eaf236c923bd0ff57fcb8582563b0",
+    "download_url": "https://raw.githubusercontent.com/jollygoodcode/whatsnew/master/whatsnew.gemspec",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/jollygoodcode/whatsnew/contents/whatsnew.gemspec?ref=master",
+      "git": "https://api.github.com/repos/jollygoodcode/whatsnew/git/blobs/86ca87e2ac7eaf236c923bd0ff57fcb8582563b0",
+      "html": "https://github.com/jollygoodcode/whatsnew/blob/master/whatsnew.gemspec"
+    }
+  }
+]

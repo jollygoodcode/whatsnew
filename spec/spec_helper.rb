@@ -1,17 +1,18 @@
 require "whatsnew"
 require "dish"
 require "json"
+require "webmock/rspec"
 
 module OctokitHelpers
-  def sawyer_contents
+  def jollygoodcode_whatsnew
     Dish(
-      JSON.parse(IO.read("spec/fixtures/github_api/contents/seattlerb-minitest.json"))
+      JSON.parse(IO.read("spec/fixtures/github_api/jollygoodcode-whatsnew.json"))
     )
   end
 
-  def sawyer_releases
+  def octokit_octokitrb
     Dish(
-      JSON.parse(IO.read("spec/fixtures/github_api/releases/benbalter-licensee.json"))
+      JSON.parse(IO.read("spec/fixtures/github_api/octokit-octokitrb.json"))
     )
   end
 end
@@ -32,7 +33,7 @@ RSpec.configure do |config|
   config.warnings = true
 
   if config.files_to_run.one?
-    config.default_formatter = 'doc'
+    config.default_formatter = "doc"
   end
 
   # config.profile_examples = 10
@@ -42,3 +43,5 @@ RSpec.configure do |config|
 
   config.include OctokitHelpers
 end
+
+ENV["OAUTH_ACCESS_TOKEN"] = "x"*40

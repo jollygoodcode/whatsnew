@@ -13,7 +13,7 @@ require "whatsnew/remote_files"
 require "whatsnew/project"
 
 module Whatsnew
-  def self.about(path_or_resources)
-    Project.new(path_or_resources).news_file
+  def self.about(path_or_repo, access_token = nil)
+    Project.new(path_or_repo, access_token).news_file
   end
 end
