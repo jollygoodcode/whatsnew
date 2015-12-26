@@ -2,12 +2,8 @@
 
 Signal.trap("INT") { abort }
 
-require "whatsnew"
+lib_dir = File.expand_path(File.join(File.dirname(__FILE__), "..", "lib"))
+$LOAD_PATH << lib_dir unless $LOAD_PATH.include?(lib_dir)
+require "whatsnew/cli"
 
-if news = Whatsnew.about(Dir.pwd)
-  puts news.read
-else
-  puts "Not found. Do you mind keep a changelog?"
-  puts "Or tell the project owner to keep a changelog :)"
-  puts "See http://keepachangelog.com"
-end
+Whatsnew::CLI.start

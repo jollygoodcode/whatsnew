@@ -1,21 +1,12 @@
-require "pathname"
-
 module Whatsnew
   class LocalFiles
     def initialize(path)
-      @path = path
-      @news = Dir.glob(File.join(path, "*".freeze)).find do |file|
-        file =~ %r{(CHANGE|CHANGES|CHANGELOG|NEWS|HISTORY)}i.freeze
-      end
+      @path = path || DOT
     end
 
     def to_news_file
-      if news
-        NewsFile.new(
-          file_name,
-          content: file.read,
-          file_url: "#{project_uri}/blob/master/#{file_name}"
-        )
+      if news = find_news_at_local
+        LocalNewsFile.new(news, path)
       else
         NoNewsFile.new
       end
@@ -23,30 +14,12 @@ module Whatsnew
 
     private
 
-      attr_reader :path, :news, :matched
+      attr_reader :path
 
-      def project_uri
-        if File.exist?("#{path}/.git") && matched_from_git_config
-          "https://#{matched[:host]}/#{matched[:owner]}/#{matched[:repo]}"
-        else
-          "NOT FOUND".freeze
+      def find_news_at_local
+        Dir.glob(File.join(path, STAR)).find do |local_file|
+          local_file =~ FILES_TO_SEARCH_REGEXP
         end
-      end
-
-      def matched_from_git_config
-        @matched ||= Dir.chdir(Pathname(path).to_path) do
-          `git config --get remote.origin.url`.match(
-            %r{(http://|https://|git.+)(?<host>(github.com|bitbucket.com|bitbucket.org))[:/](?<owner>\S+)/(?<repo>\S+)\.git}
-          )
-        end
-      end
-
-      def file
-        @file ||= Pathname(news)
-      end
-
-      def file_name
-        @file_name ||= file.basename.to_s
       end
   end
 end

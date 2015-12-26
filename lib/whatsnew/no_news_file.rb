@@ -1,9 +1,5 @@
-require "pathname"
-
 module Whatsnew
   class NoNewsFile
-    NOT_FOUND = "NOT FOUND".freeze
-
     def file_name
       NOT_FOUND
     end
@@ -12,12 +8,12 @@ module Whatsnew
       NOT_FOUND
     end
 
-    def read
-      NOT_FOUND
+    def content
+      EMPTY_STRING
     end
 
-    def content
-      "".freeze
+    def read
+      NOT_FOUND
     end
   end
 end

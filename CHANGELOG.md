@@ -2,6 +2,8 @@
 
 ## Unrelease
 
+- Add support for GitHub releases [#9](https://github.com/jollygoodcode/whatsnew/pull/9)
+
 ## v0.4.1 - 2015-08-09
 
 ### Features
