@@ -5,7 +5,7 @@
 
 What's New in a project?
 
-This gem is used in [deppbot](https://www.deppbot.com) to build awesome, automated Pull Request descriptions for `bundle update` like [this one in Ruby Bench](https://github.com/ruby-bench/ruby-bench-web/pull/122).
+This gem is used in [deppbot](https://www.deppbot.com) to find changelog in Pull Request body, an example could be found in [this Pull Request on ruby-bench/ruby-bench-web](https://github.com/ruby-bench/ruby-bench-web/pull/122).
 
 --
 
@@ -33,7 +33,7 @@ $ gem install whatsnew
 
 ### First Setup OAuth Token
 
-Either Pass in as command line argument
+Either pass in as command line argument
 
 ```
 whatsnew --access-token=<your-40-char-token>
@@ -41,7 +41,7 @@ whatsnew --access-token=<your-40-char-token>
 
 Or stored in ENV variable: `OAUTH_ACCESS_TOKEN`.
 
-You can either get a [Personal Access Token] or [get an OAuth token](https://developer.github.com/v3/oauth).
+You can either get a [Personal Access Token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/) or [get an OAuth token](https://developer.github.com/v3/oauth).
 
 If you need to access private repository, make sure to specify the `repo` scope while creating your token.
 
@@ -49,28 +49,29 @@ If no OAuth token is provided, unauthenticated limits to 60 requests per hour. M
 
 ### Command Line Usage
 
-```
-$ whatsnew
+By default `whatsnew about` without argument will search for current folder:
 
+```
+$ whatsnew about
 What's New:
 See CHANGELOG.md: https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md.
 ```
 
-If changelog cannot be found, search for [GitHub Releases](https://github.com/blog/1547-release-your-software) (if it has any releases):
+If changelog cannot be found, whatsnew will search for [GitHub Releases](https://github.com/blog/1547-release-your-software) (if it has any releases):
 
 ```
-$ whatsnew
-
+$ whatsnew about benbalter/licensee
 What's New:
-See Releases: https://github.com/jollygoodcode/whatsnew/releases.
+See Releases: https://github.com/benbalter/licensee/releases.
 ```
 
 Both changelog and release cannot be found:
 
 ```
-$ whatsnew
+$ whatsnew about
 
-This project should Keep a CHANGELOG: http://keepachangelog.com.
+Not found. This project should keep a changelog.
+Please see http://keepachangelog.com.
 ```
 
 ## What Does It Search For?
@@ -85,7 +86,11 @@ This project should Keep a CHANGELOG: http://keepachangelog.com.
 
 ### API usage
 
+`Whatsnew.about` API can take a path (Local) or `owner/repo` (Remote) string.
+
 #### Local
+
+Search in given path:
 
 ```ruby
 news = Whatsnew.about "/Users/Juan/dev/whatsnew"
@@ -107,6 +112,10 @@ news.read
 
 #### Remote
 
+Search changelog on GitHub. It will first search if a remote repository has a changelog file, then search for GitHub Releases automatically.
+
+Search in given `owner/repo`:
+
 ```ruby
 news = Whatsnew.about "jollygoodcode/whatsnew", oauth_token: "e72e16c7e42f292c6912e7710c838347ae178b4a"
 
@@ -122,8 +131,6 @@ news.content
 news.read
 => "What's New:\nSee CHANGELOG.md: https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md."
 ```
-
-It will first search if a remote repository has a changelog file, then search for GitHub Releases.
 
 ## Inspired by
 

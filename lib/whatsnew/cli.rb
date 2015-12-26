@@ -9,7 +9,7 @@ module Whatsnew
     end
     map %w(-v --version) => :version
 
-    desc "about", "Find changelog / releases of a given path or repo on GitHub. If none argument is given, look for current path's changelog."
+    desc "about", "Find changelog / releases of a given path or repo on GitHub. If no argument is given, look for current path's changelog."
     option :access_token, type: :string, aliases: "-a"
     def about(path_or_repo = nil)
       news = Whatsnew.about path_or_repo, options[:access_token]
