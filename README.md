@@ -31,7 +31,7 @@ $ gem install whatsnew
 
 ## Usage
 
-### First Setup OAuth Token
+### First Setup a OAuth Token
 
 Either pass in as command line argument
 
@@ -41,11 +41,13 @@ whatsnew --access-token=<your-40-char-token>
 
 Or stored in ENV variable: `OAUTH_ACCESS_TOKEN`.
 
+### Get a OAuth Token
+
 You can either get a [Personal Access Token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/) or [get an OAuth token](https://developer.github.com/v3/oauth).
 
 If you need to access private repository, make sure to specify the `repo` scope while creating your token.
 
-If no OAuth token is provided, unauthenticated limits to 60 requests per hour. More details please read [Rate Limiting](https://developer.github.com/v3/#rate-limiting).
+If no OAuth token is provided, unauthenticated limits to [60 requests per hour](https://developer.github.com/v3/#rate-limiting).
 
 ### Command Line Usage
 
@@ -57,7 +59,15 @@ What's New:
 See CHANGELOG.md: https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md.
 ```
 
-If changelog cannot be found, whatsnew will search for [GitHub Releases](https://github.com/blog/1547-release-your-software) (if it has any releases):
+You can also search for a GitHub repository:
+
+```
+$ whatsnew about jollygoodcode/twemoji
+What's New:
+See CHANGELOG.md: https://github.com/jollygoodcode/twemoji/blob/master/CHANGELOG.md.
+```
+
+If a [changelog-like file](#what-does-it-search-for) cannot be found, whatsnew will search for [GitHub Releases](https://github.com/blog/1547-release-your-software) (if it has any releases with non-empty release body):
 
 ```
 $ whatsnew about benbalter/licensee
@@ -69,7 +79,6 @@ Both changelog and release cannot be found:
 
 ```
 $ whatsnew about
-
 Not found. This project should keep a changelog.
 Please see http://keepachangelog.com.
 ```
@@ -82,11 +91,11 @@ Please see http://keepachangelog.com.
 
 * If a changelog-like file cannot be found, will try to see if [GitHub Releases](https://github.com/blog/1547-release-your-software) has contents to show
 
-* It doesn't search for changelog listed in README (regardless of file extension)
+* It doesn't search for changelog listed in README
 
 ### API usage
 
-`Whatsnew.about` API can take a path (Local) or `owner/repo` (Remote) string.
+`Whatsnew.about` API can take a path (see Local section below) or `owner/repo` (see Remote section below) string.
 
 #### Local
 
@@ -112,7 +121,9 @@ news.read
 
 #### Remote
 
-Search changelog on GitHub. It will first search if a remote repository has a changelog file, then search for GitHub Releases automatically.
+Search changelog-like file / releases on GitHub.
+
+It will first search if a remote repository has a changelog file:
 
 Search in given `owner/repo`:
 
@@ -130,6 +141,24 @@ news.content
 
 news.read
 => "What's New:\nSee CHANGELOG.md: https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md."
+```
+
+Then search for GitHub Releases with non-empty body.
+
+```
+news = Whatsnew.about "benbalter/licensee", oauth_token: "e72e16c7e42f292c6912e7710c838347ae178b4a"
+
+news.file_name
+=> "Releases"
+
+news.file_url
+=> "https://github.com/benbalter/licensee/releases"
+
+news.content
+=> "See https://github.com/benbalter/licensee/releases."
+
+news.read
+=> "What's New:\nSee Releases: https://github.com/benbalter/licensee/releases."
 ```
 
 ## Inspired by
