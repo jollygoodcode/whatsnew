@@ -20,15 +20,13 @@ RSpec.describe Whatsnew::RemoteFiles do
 
   context "with invalid OAuth token" do
     it "aborts when passed in OAuth token is invalid" do
-      expect { Whatsnew::RemoteFiles.new("foo/bar", "invalid") }.to \
-        raise_error(SystemExit)
+      expect { Whatsnew::RemoteFiles.new("foo/bar", "invalid") }.to raise_error SystemExit
     end
 
     it "aborts when OAuth token length from ENV is invalid" do
       expect(ENV).to receive(:fetch).with("OAUTH_ACCESS_TOKEN") { "invalid" }
 
-      expect { Whatsnew::RemoteFiles.new("foo/bar") }.to \
-        raise_error SystemExit
+      expect { Whatsnew::RemoteFiles.new("foo/bar") }.to raise_error SystemExit
     end
   end
 
@@ -51,6 +49,30 @@ RSpec.describe Whatsnew::RemoteFiles do
       expect(Octokit::Client).to receive(:new) { client }
 
       expect(news_file).to be_a Whatsnew::ReleaseFile
+    end
+  end
+
+  context "Not found" do
+    let(:repo) { "foo/bar" }
+    let(:client) { double }
+
+    it "raises REPO_NOT_FOUND error" do
+      expect(Octokit::Client).to receive(:new) { client }
+      expect(client).to receive(:contents).and_raise(Octokit::NotFound)
+
+      expect { news_file }.to raise_error(Whatsnew::RemoteFiles::REPO_NOT_FOUND)
+    end
+  end
+
+  context "unauthorized" do
+    let(:repo) { "foo/bar" }
+    let(:client) { double }
+
+    it "raises REPO_NOT_FOUND error" do
+      expect(Octokit::Client).to receive(:new) { client }
+      expect(client).to receive(:contents).and_raise(Octokit::Unauthorized)
+
+      expect { news_file }.to raise_error(Whatsnew::RemoteFiles::INVALID_OAUTH_TOKEN)
     end
   end
 

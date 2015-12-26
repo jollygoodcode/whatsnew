@@ -2,6 +2,10 @@ require "octokit"
 
 module Whatsnew
   class RemoteFiles
+    REPO_NOT_FOUND = Class.new(Exception)
+    REPO_NOT_FOUND_MESSAGE = "This repository cannot be found. Specify OAuth token if this is a private repository.".freeze
+    INVALID_OAUTH_TOKEN = Class.new(Exception)
+
     def initialize(repo, access_token = nil)
       @repo = repo
       @token =
@@ -22,9 +26,9 @@ module Whatsnew
         NoNewsFile.new
       end
     rescue Octokit::NotFound
-      NoNewsFile.new
+      raise REPO_NOT_FOUND, REPO_NOT_FOUND_MESSAGE
     rescue Octokit::Unauthorized
-      abort "ERROR: Your OAuth token: #{token} is invalid or revoked."
+      raise INVALID_OAUTH_TOKEN, "ERROR: Your OAuth token: #{token} is invalid or revoked."
     end
 
     private
