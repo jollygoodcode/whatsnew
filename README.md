@@ -5,7 +5,7 @@
 
 What's New in a project?
 
-This gem is used in [deppbot](https://www.deppbot.com) to find changelog in Pull Request body, an example could be found in [this Pull Request on ruby-bench/ruby-bench-web](https://github.com/ruby-bench/ruby-bench-web/pull/122).
+This gem is used in [deppbot](https://www.deppbot.com) to retrieve a ruby gem's changelog for use in a Pull Request body, an example could be found in [this Pull Request on ruby-bench/ruby-bench-web](https://github.com/ruby-bench/ruby-bench-web/pull/122).
 
 --
 
@@ -31,27 +31,27 @@ $ gem install whatsnew
 
 ## Usage
 
-### First Setup a OAuth Token
+### First Setup an OAuth Token
 
-Either pass in as command line argument
+Either pass it in as a command line argument
 
 ```
 whatsnew --access-token=<your-40-char-token>
 ```
 
-Or stored in ENV variable: `OAUTH_ACCESS_TOKEN`.
+Or store it as an ENV variable: `OAUTH_ACCESS_TOKEN`.
 
 ### Get a OAuth Token
 
-You can either get a [Personal Access Token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/) or [get an OAuth token](https://developer.github.com/v3/oauth).
+You can either get a [Personal Access Token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/) or [an OAuth token](https://developer.github.com/v3/oauth).
 
 If you need to access private repository, make sure to specify the `repo` scope while creating your token.
 
-If no OAuth token is provided, unauthenticated limits to [60 requests per hour](https://developer.github.com/v3/#rate-limiting).
+If no OAuth token is provided, unauthenticated requests are limited to [60 requests per hour](https://developer.github.com/v3/#rate-limiting).
 
 ### Command Line Usage
 
-By default `whatsnew about` without argument will search for current folder:
+By default `whatsnew about` without argument will search for changelog in the current folder:
 
 ```
 $ whatsnew about
@@ -59,7 +59,7 @@ What's New:
 See CHANGELOG.md: https://github.com/jollygoodcode/whatsnew/blob/master/CHANGELOG.md.
 ```
 
-You can also search for a GitHub repository:
+You can also search for changelog in a GitHub repository:
 
 ```
 $ whatsnew about jollygoodcode/twemoji
@@ -145,7 +145,7 @@ news.read
 
 Then search for GitHub Releases with non-empty body.
 
-```
+```ruby
 news = Whatsnew.about "benbalter/licensee", oauth_token: "e72e16c7e42f292c6912e7710c838347ae178b4a"
 
 news.file_name
