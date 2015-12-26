@@ -1,8 +1,16 @@
 # CHANGELOG
 
-## Unrelease
+## v1.0.0 - 2015-12-27
 
-- Add support for GitHub releases [#9](https://github.com/jollygoodcode/whatsnew/pull/9)
+- Add support for searching GitHub releases [#9](https://github.com/jollygoodcode/whatsnew/pull/9)
+- CLI rewrite in Thor gem
+- Switch test suite to RSpec
+
+### Incompatibilities
+
+- `Whatsnew.about` API changes, please consult the [v1.0.0 README.md](https://github.com/jollygoodcode/whatsnew/blob/v1.0.0/README.md)
+
+### API changes
 
 ## v0.4.1 - 2015-08-09
 
