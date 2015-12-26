@@ -10,4 +10,5 @@ group :development do
   gem "octokit", "~> 4.1.1"
   gem "dish"
   gem "webmock"
+  gem "pry-byebug"
 end
