@@ -41,7 +41,7 @@ module Whatsnew
       def matched_from_git_config
         Dir.chdir(Pathname(path).to_path) do
           `git config --get remote.origin.url`.match(
-            %r{(http://|https://|git.+)(?<host>(github.com|bitbucket.com|bitbucket.org))[:/](?<owner>\S+)/(?<repo>\S+)\.git}
+            %r{(http://|https://|git.+)(?<host>(github.com|bitbucket.com|bitbucket.org))[:/](?<owner>\S+)/(?<repo>\S+)\.git}.freeze
           )
         end
       end
