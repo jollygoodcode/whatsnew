@@ -2,6 +2,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/whatsnew.svg)](http://badge.fury.io/rb/whatsnew)
 [![Build Status](https://travis-ci.org/jollygoodcode/whatsnew.svg?branch=master)](https://travis-ci.org/jollygoodcode/whatsnew)
+[![Code Climate](https://codeclimate.com/github/jollygoodcode/whatsnew/badges/gpa.svg)](https://codeclimate.com/github/jollygoodcode/whatsnew)
 
 What's New in a project?
 
