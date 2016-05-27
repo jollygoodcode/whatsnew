@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.0.1 - 2016.05.27
+
+- Add support for `RELEASE_NOTES.*` [#10](https://github.com/jollygoodcode/whatsnew/pull/10)
+
 ## v1.0.0 - 2015-12-27
 
 - Add support for searching GitHub releases [#9](https://github.com/jollygoodcode/whatsnew/pull/9)
