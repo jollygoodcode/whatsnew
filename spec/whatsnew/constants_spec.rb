@@ -20,6 +20,6 @@ RSpec.describe Whatsnew do
   end
 
   it "should have a FILES_TO_SEARCH_REGEXP constant" do
-    expect(subject.const_get("FILES_TO_SEARCH_REGEXP")).to eq(/(CHANGE|CHANGES|CHANGELOG|NEWS|HISTORY)/i)
+    expect(subject.const_get("FILES_TO_SEARCH_REGEXP")).to eq(/(CHANGE|CHANGES|CHANGELOG|NEWS|HISTORY|RELEASE_NOTES)/i)
   end
 end
