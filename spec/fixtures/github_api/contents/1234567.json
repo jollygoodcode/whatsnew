@@ -1,0 +1,130 @@
+[
+  {
+    "name": ".gitignore",
+    "path": ".gitignore",
+    "sha": "51f282d298f93f3cb66c728bafed38333a218211",
+    "size": 77,
+    "url": "https://api.github.com/repos/schwern/test-warn/contents/.gitignore?ref=master",
+    "html_url": "https://github.com/schwern/test-warn/blob/master/.gitignore",
+    "git_url": "https://api.github.com/repos/schwern/test-warn/git/blobs/51f282d298f93f3cb66c728bafed38333a218211",
+    "download_url": "https://raw.githubusercontent.com/schwern/test-warn/master/.gitignore",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/schwern/test-warn/contents/.gitignore?ref=master",
+      "git": "https://api.github.com/repos/schwern/test-warn/git/blobs/51f282d298f93f3cb66c728bafed38333a218211",
+      "html": "https://github.com/schwern/test-warn/blob/master/.gitignore"
+    }
+  },
+  {
+    "name": "Changes",
+    "path": "Changes",
+    "sha": "811fddadb0c355f20a96c4a69a279e372bf74a39",
+    "size": 2870,
+    "url": "https://api.github.com/repos/schwern/test-warn/contents/Changes?ref=master",
+    "html_url": "https://github.com/schwern/test-warn/blob/master/Changes",
+    "git_url": "https://api.github.com/repos/schwern/test-warn/git/blobs/811fddadb0c355f20a96c4a69a279e372bf74a39",
+    "download_url": "https://raw.githubusercontent.com/schwern/test-warn/master/Changes",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/schwern/test-warn/contents/Changes?ref=master",
+      "git": "https://api.github.com/repos/schwern/test-warn/git/blobs/811fddadb0c355f20a96c4a69a279e372bf74a39",
+      "html": "https://github.com/schwern/test-warn/blob/master/Changes"
+    }
+  },
+  {
+    "name": "MANIFEST",
+    "path": "MANIFEST",
+    "sha": "b4bb1f632748ca9c7f442766a18f0a17e8c8bcb5",
+    "size": 255,
+    "url": "https://api.github.com/repos/schwern/test-warn/contents/MANIFEST?ref=master",
+    "html_url": "https://github.com/schwern/test-warn/blob/master/MANIFEST",
+    "git_url": "https://api.github.com/repos/schwern/test-warn/git/blobs/b4bb1f632748ca9c7f442766a18f0a17e8c8bcb5",
+    "download_url": "https://raw.githubusercontent.com/schwern/test-warn/master/MANIFEST",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/schwern/test-warn/contents/MANIFEST?ref=master",
+      "git": "https://api.github.com/repos/schwern/test-warn/git/blobs/b4bb1f632748ca9c7f442766a18f0a17e8c8bcb5",
+      "html": "https://github.com/schwern/test-warn/blob/master/MANIFEST"
+    }
+  },
+  {
+    "name": "META.yml",
+    "path": "META.yml",
+    "sha": "2333f637ce49ba19815a579f7d4fb858e654af13",
+    "size": 865,
+    "url": "https://api.github.com/repos/schwern/test-warn/contents/META.yml?ref=master",
+    "html_url": "https://github.com/schwern/test-warn/blob/master/META.yml",
+    "git_url": "https://api.github.com/repos/schwern/test-warn/git/blobs/2333f637ce49ba19815a579f7d4fb858e654af13",
+    "download_url": "https://raw.githubusercontent.com/schwern/test-warn/master/META.yml",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/schwern/test-warn/contents/META.yml?ref=master",
+      "git": "https://api.github.com/repos/schwern/test-warn/git/blobs/2333f637ce49ba19815a579f7d4fb858e654af13",
+      "html": "https://github.com/schwern/test-warn/blob/master/META.yml"
+    }
+  },
+  {
+    "name": "Makefile.PL",
+    "path": "Makefile.PL",
+    "sha": "11f71f41e14210970f51d8cba445ade8b51560f5",
+    "size": 2347,
+    "url": "https://api.github.com/repos/schwern/test-warn/contents/Makefile.PL?ref=master",
+    "html_url": "https://github.com/schwern/test-warn/blob/master/Makefile.PL",
+    "git_url": "https://api.github.com/repos/schwern/test-warn/git/blobs/11f71f41e14210970f51d8cba445ade8b51560f5",
+    "download_url": "https://raw.githubusercontent.com/schwern/test-warn/master/Makefile.PL",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/schwern/test-warn/contents/Makefile.PL?ref=master",
+      "git": "https://api.github.com/repos/schwern/test-warn/git/blobs/11f71f41e14210970f51d8cba445ade8b51560f5",
+      "html": "https://github.com/schwern/test-warn/blob/master/Makefile.PL"
+    }
+  },
+  {
+    "name": "README",
+    "path": "README",
+    "sha": "631785980cd73e2bf1d36cf194d274cc4069c372",
+    "size": 2161,
+    "url": "https://api.github.com/repos/schwern/test-warn/contents/README?ref=master",
+    "html_url": "https://github.com/schwern/test-warn/blob/master/README",
+    "git_url": "https://api.github.com/repos/schwern/test-warn/git/blobs/631785980cd73e2bf1d36cf194d274cc4069c372",
+    "download_url": "https://raw.githubusercontent.com/schwern/test-warn/master/README",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/schwern/test-warn/contents/README?ref=master",
+      "git": "https://api.github.com/repos/schwern/test-warn/git/blobs/631785980cd73e2bf1d36cf194d274cc4069c372",
+      "html": "https://github.com/schwern/test-warn/blob/master/README"
+    }
+  },
+  {
+    "name": "Warn.pm",
+    "path": "Warn.pm",
+    "sha": "18993136314ac8abbb7b043dc965a218acd54a5f",
+    "size": 16582,
+    "url": "https://api.github.com/repos/schwern/test-warn/contents/Warn.pm?ref=master",
+    "html_url": "https://github.com/schwern/test-warn/blob/master/Warn.pm",
+    "git_url": "https://api.github.com/repos/schwern/test-warn/git/blobs/18993136314ac8abbb7b043dc965a218acd54a5f",
+    "download_url": "https://raw.githubusercontent.com/schwern/test-warn/master/Warn.pm",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/schwern/test-warn/contents/Warn.pm?ref=master",
+      "git": "https://api.github.com/repos/schwern/test-warn/git/blobs/18993136314ac8abbb7b043dc965a218acd54a5f",
+      "html": "https://github.com/schwern/test-warn/blob/master/Warn.pm"
+    }
+  },
+  {
+    "name": "t",
+    "path": "t",
+    "sha": "8a3d047c5822944d1b26b8929cc1d2060589928f",
+    "size": 0,
+    "url": "https://api.github.com/repos/schwern/test-warn/contents/t?ref=master",
+    "html_url": "https://github.com/schwern/test-warn/tree/master/t",
+    "git_url": "https://api.github.com/repos/schwern/test-warn/git/trees/8a3d047c5822944d1b26b8929cc1d2060589928f",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/schwern/test-warn/contents/t?ref=master",
+      "git": "https://api.github.com/repos/schwern/test-warn/git/trees/8a3d047c5822944d1b26b8929cc1d2060589928f",
+      "html": "https://github.com/schwern/test-warn/tree/master/t"
+    }
+  }
+]

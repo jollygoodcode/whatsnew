@@ -8,7 +8,6 @@ group :development do
   gem "pry"
   gem "rspec", "~> 3.3.0"
   gem "octokit", "~> 4.1.1"
-  gem "dish"
   gem "webmock"
   gem "pry-byebug"
 end

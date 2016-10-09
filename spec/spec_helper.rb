@@ -1,18 +1,19 @@
 require "whatsnew"
-require "dish"
 require "json"
 require "webmock/rspec"
 
 module OctokitHelpers
   def jollygoodcode_whatsnew
-    Dish(
-      JSON.parse(IO.read("spec/fixtures/github_api/jollygoodcode-whatsnew.json"))
+    JSON.parse(
+      IO.read("spec/fixtures/github_api/jollygoodcode-whatsnew.json"),
+      object_class: OpenStruct
     )
   end
 
   def octokit_octokitrb
-    Dish(
-      JSON.parse(IO.read("spec/fixtures/github_api/octokit-octokitrb.json"))
+    JSON.parse(
+      IO.read("spec/fixtures/github_api/octokit-octokitrb.json"),
+      object_class: OpenStruct
     )
   end
 end

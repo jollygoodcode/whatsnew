@@ -1,12 +1,9 @@
-require "dish"
 require "json"
 
 RSpec.describe Whatsnew::RemoteFiles do
   let(:news_file) { Whatsnew::RemoteFiles.new(repo).to_news_file }
 
   context "without OAuth token" do
-    before { }
-
     it "prints warning" do
       before = ENV.delete "OAUTH_ACCESS_TOKEN"
 
@@ -32,7 +29,7 @@ RSpec.describe Whatsnew::RemoteFiles do
 
   context "with Contents API / Resource like object" do
     let(:repo) { "jollygoodcode/whatsnew" }
-    let(:client) { double(contents: jollygoodcode_whatsnew) }
+    let(:client) { double(contents: jollygoodcode_whatsnew, releases: []) }
 
     it "returns NewsFile" do
       expect(Octokit::Client).to receive(:new) { client }
@@ -84,6 +81,27 @@ RSpec.describe Whatsnew::RemoteFiles do
       expect(Octokit::Client).to receive(:new) { client }
 
       expect(news_file).to be_a Whatsnew::NoNewsFile
+    end
+  end
+
+  context "repo moved permanently" do
+    let(:moved) do
+      {
+        "message" => "Moved Permanently",
+        "url" => "https://api.github.com/repositories/1234567/contents/",
+        "documentation_url" => "https://developer.github.com/v3/#http-redirects"
+      }
+    end
+    let(:repo) { "jollygoodcode/whatsnew-old" }
+    let(:client) { double(contents: JSON.parse(moved.to_json, object_class: OpenStruct)) }
+
+    it "returns NewsFile" do
+      stub_request(:get, "https://api.github.com/repositories/1234567/contents/").
+        to_return(status: 200, body: IO.read("spec/fixtures/github_api/contents/1234567.json"))
+
+      allow(Octokit::Client).to receive(:new) { client }
+
+      expect(news_file).to be_a Whatsnew::NewsFile
     end
   end
 end

@@ -1,5 +1,7 @@
 # CHANGELOG
 
+- Follow repo redirect for searching changelogs [#10](https://github.com/jollygoodcode/whatsnew/pull/11)
+
 ## v1.0.1 - 2016.05.27
 
 - Add support for `RELEASE_NOTES.*` [#10](https://github.com/jollygoodcode/whatsnew/pull/10)

@@ -1,4 +1,8 @@
 require "octokit"
+require "json"
+require "net/http"
+require "uri"
+require "ostruct"
 
 module Whatsnew
   class RemoteFiles
@@ -44,11 +48,23 @@ module Whatsnew
       end
 
       def find_from_contents
-        if resources = client.contents(repo)
-          resources.find do |resource|
-            resource.name =~ FILES_TO_SEARCH_REGEXP
-          end
+        resources = client.contents(repo)
+
+        if new_location = moved_to_new_location?(resources)
+          search_for_changelog_like_file(new_resources_from(new_location))
+        else
+          search_for_changelog_like_file(resources)
         end
+      end
+
+      def moved_to_new_location?(resources)
+        resources.respond_to?(:message) &&
+        resources.message == "Moved Permanently" &&
+        resources.url
+      end
+
+      def new_resources_from(url)
+        JSON.parse(Net::HTTP.get(URI.parse(url)), object_class: OpenStruct)
       end
 
       def find_from_releases
@@ -56,6 +72,12 @@ module Whatsnew
           resources.find do |release|
             release.respond_to?(:body) && !release.body.empty?
           end
+        end
+      end
+
+      def search_for_changelog_like_file(resources)
+        resources.find do |resource|
+          resource.name =~ FILES_TO_SEARCH_REGEXP
         end
       end
   end
